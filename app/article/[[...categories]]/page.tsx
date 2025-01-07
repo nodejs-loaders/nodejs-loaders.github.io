@@ -4,12 +4,12 @@ import ArticleCard from '~/components/Post/ArticleCard';
 import styles from './page.module.css';
 import type { FC } from 'react';
 
-type categoriesParams = {
+type CategoriesParams = {
 	categories?: string[];
 };
 
 type PageProps = {
-	params: Promise<categoriesParams>;
+	params: Promise<CategoriesParams>;
 };
 
 /**

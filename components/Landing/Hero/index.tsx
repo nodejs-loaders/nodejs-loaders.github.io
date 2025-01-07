@@ -1,6 +1,7 @@
 import ButtonLink from '~/components/Common/Button/Link';
 import styles from './index.module.css';
 import type { FC } from 'react';
+import NPMIcon from '~/components/Icons/NPM';
 
 const Hero: FC = () => (
 	<section className={styles.hero}>
@@ -19,7 +20,8 @@ const Hero: FC = () => (
 				href="https://www.npmjs.com/org/nodejs-loaders"
 				kind="secondary"
 			>
-				Discover us on NPM
+				Discover us on NPM{' '}
+				<NPMIcon aria-label="NPM Logo" width={64} height={64} />
 			</ButtonLink>
 		</div>
 	</section>

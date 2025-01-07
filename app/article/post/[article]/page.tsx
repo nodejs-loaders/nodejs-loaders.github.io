@@ -7,12 +7,12 @@ import type { FC } from 'react';
 import type { PostFrontmatter } from '~/types/frontmatter';
 import '~/styles/markdown.css';
 
-type postParams = {
+type PostParams = {
 	article: string;
 };
 
 type PageProps = {
-	params: Promise<postParams>;
+	params: Promise<PostParams>;
 };
 
 export async function generateStaticParams() {
