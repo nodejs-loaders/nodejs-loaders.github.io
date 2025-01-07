@@ -1,9 +1,10 @@
 import ButtonLink from '~/components/Common/Button/Link';
+import LastestArticle from '~/components/Post/LastestArticle';
 import type { FC } from 'react';
 
 const Page: FC = () => (
 	<main>
-		<section className="flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-8 px-10">
+		<section className='flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-8 bg-gradient-to-b from-transparent via-green-50/50 to-green-50 px-10 dark:from-transparent dark:via-gray-900 dark:to-gray-800'>
 			<h1 className="text-center font-bold text-4xl dark:text-white">
 				<code className="rounded bg-gray-200 p-1 dark:bg-gray-800 dark:text-gray-200">
 					Nodejs-Loaders
@@ -26,7 +27,13 @@ const Page: FC = () => (
 				</ButtonLink>
 			</div>
 		</section>
-		<section id="lastest-article">{/* lasted posts */}</section>
+		<section
+			id="lastest-article"
+			className='bg-green-50 px-10 py-8 dark:bg-gray-800'
+		>
+			<h2 className="font-bold text-2xl dark:text-white">Lastes Articles</h2>
+			<LastestArticle limit={3} />
+		</section>
 	</main>
 );
 

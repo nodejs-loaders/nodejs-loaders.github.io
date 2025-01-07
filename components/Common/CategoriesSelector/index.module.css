@@ -1,0 +1,30 @@
+.categoriesSelector {
+	@apply flex
+		space-x-2
+		border-green-400
+		border-b-4
+		text-gray-800
+		dark:text-gray-200
+		dark:border-green-600;
+
+	.item {
+		@apply flex
+			items-center
+			px-2
+			py-1
+			rounded-t-md
+			cursor-pointer
+			transition
+			duration-200
+			hover:bg-green-400
+			hover:text-white
+			dark:hover:bg-green-600
+			dark:hover:text-white;
+
+		&.active {
+			@apply bg-green-400
+				text-white
+				dark:bg-green-600;
+		}
+	}
+}

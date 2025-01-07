@@ -1,3 +1,5 @@
+import CategoriesSelector from '~/components/Common/CategoriesSelector';
+import { getPostsMetadata } from '~/lib/post';
 import type { FC } from 'react';
 
 type categoriesParams = {
@@ -11,45 +13,53 @@ type PageProps = {
 /**
  * List of available categories
  */
-const CATEGORIES = ['use-cases', 'releases'];
+const CATEGORIES = [
+	{
+		category: 'All articles',
+		slug: '',
+	},
+	{
+		category: 'information',
+		slug: 'information',
+	},
+	{
+		category: 'use-cases',
+		slug: 'use-cases',
+	},
+	{
+		category: 'releases',
+		slug: 'releases',
+	},
+];
 
-export async function generateStaticParams() {
+export const generateStaticParams = () => {
 	const params = [
 		{ categories: [] }, // For the base route without any categories
-		...CATEGORIES.map(category => ({ categories: [category] })), // For each individual category
+		...CATEGORIES.slice(1).map(category => ({ categories: [category.slug] })), // For each individual category
 	];
 
 	return params;
-}
+};
 
 const Page: FC<PageProps> = async ({ params }) => {
 	const currentCategories = (await params).categories || [];
+	const postsMetadata = await getPostsMetadata(currentCategories[0]);
 
 	return (
 		<main>
 			<h1 className="font-bold text-3xl lg:text-4xl">Article list</h1>
-			<ul className="flex space-x-2 border-green-500 border-b-2 text-gray-800 dark:text-gray-200">
-				<li>
-					<a
-						href="/article"
-						className={currentCategories.length === 0 ? 'bg-green-500' : ''}
-					>
-						All articles
-					</a>
-				</li>
-				{CATEGORIES.map(category => (
-					<li key={category}>
-						<a
-							href={`/article/${category}`}
-							className={
-								currentCategories.includes(category) ? 'bg-green-500' : ''
-							}
-						>
-							{category}
-						</a>
-					</li>
+			<CategoriesSelector
+				currentCategories={currentCategories}
+				categories={CATEGORIES}
+			/>
+			<div>
+				{postsMetadata.map(post => (
+					<div key={post.title}>
+						<h2>{post.title}</h2>
+						<p>{post.description}</p>
+					</div>
 				))}
-			</ul>
+			</div>
 		</main>
 	);
 };

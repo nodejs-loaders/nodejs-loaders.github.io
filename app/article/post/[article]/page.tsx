@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { getContent } from '~/lib/content';
+import { getAllPosts } from '~/lib/post';
 import { getGitHubAvatarUrl } from '~/utils/gitHubUtils';
 import type { FC } from 'react';
 import type { PostFrontmatter } from '~/types/frontmatter';
@@ -11,6 +12,15 @@ type postParams = {
 type PageProps = {
 	params: Promise<postParams>;
 };
+
+export async function generateStaticParams() {
+	const posts = await getAllPosts();
+
+	return posts.map(post => {
+		const article = post.split('.').slice(0, -1).join('.');
+		return { article };
+	});
+}
 
 const Page: FC<PageProps> = async ({ params }) => {
 	const article = (await params).article;
