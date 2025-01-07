@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
-import type { FC } from 'react';
 import { getContent } from '~/lib/content';
 import { getGitHubAvatarUrl } from '~/utils/gitHubUtils';
+import type { FC } from 'react';
+import type { PostFrontmatter } from '~/types/frontmatter';
 
 type postParams = {
 	article: string;
@@ -15,11 +16,7 @@ const Page: FC<PageProps> = async ({ params }) => {
 	const article = (await params).article;
 	const slugs = ['post', article];
 
-	const mdxResult = await getContent<{
-		title: string;
-		description: string;
-		authors: string;
-	}>(slugs);
+	const mdxResult = await getContent<PostFrontmatter>(slugs);
 
 	if (!mdxResult) notFound();
 
@@ -29,22 +26,24 @@ const Page: FC<PageProps> = async ({ params }) => {
 	return (
 		<main className="container mx-auto px-4">
 			<header className="my-8 border-gray-200 border-b-2 dark:border-gray-800">
-				<h1 className="font-bold text-3xl">{frontmatter.title}</h1>
+				<h1 className="font-bold text-3xl lg:text-4xl">{frontmatter.title}</h1>
 				<p className="text-gray-500 text-lg dark:text-gray-400">
 					{frontmatter.description}
 				</p>
-				<div className="flex items-center space-x-2">
+				<div className="flex items-center space-x-2 py-2.5">
 					{authors.map(author => (
 						<img
 							key={author}
 							src={getGitHubAvatarUrl(author)}
 							alt={author}
-							className="size-8 rounded-full"
+							className="size-8 rounded-md"
 						/>
 					))}
 				</div>
 			</header>
-			<article className="prose dark:prose-dark">{content}</article>
+			<article className="prose lg:prose-xl dark:prose-invert">
+				{content}
+			</article>
 		</main>
 	);
 };

@@ -27,8 +27,8 @@ const Page: FC<PageProps> = async ({ params }) => {
 
 	return (
 		<main>
-			<h1>article list</h1>
-			<ul className="flex space-x-2 border-green-500 border-b-2">
+			<h1 className="font-bold text-3xl lg:text-4xl">Article list</h1>
+			<ul className="flex space-x-2 border-green-500 border-b-2 text-gray-800 dark:text-gray-200">
 				<li>
 					<a
 						href="/article"

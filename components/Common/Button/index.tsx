@@ -4,7 +4,7 @@ import styles from './index.module.css';
 import type { FC, ButtonHTMLAttributes } from 'react';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-	kind?: 'primary' | 'secondary';
+	kind?: 'primary' | 'secondary' | 'special';
 };
 
 const Button: FC<ButtonProps> = forwardRef<HTMLButtonElement, ButtonProps>(

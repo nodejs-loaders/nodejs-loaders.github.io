@@ -4,7 +4,7 @@ import styles from '../index.module.css';
 import type { FC, ComponentProps } from 'react';
 
 type ButtonLinkProps = ComponentProps<typeof Link> & {
-	kind?: 'primary' | 'secondary';
+	kind?: 'primary' | 'secondary' | 'special';
 };
 
 const ButtonLink: FC<ButtonLinkProps> = ({
