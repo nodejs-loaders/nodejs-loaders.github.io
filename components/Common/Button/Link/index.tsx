@@ -3,10 +3,20 @@ import classNames from 'classnames';
 import styles from '../index.module.css';
 import type { FC, ComponentProps } from 'react';
 
-type ButtonLinkProps = ComponentProps<typeof Link>;
+type ButtonLinkProps = ComponentProps<typeof Link> & {
+	kind?: 'primary' | 'secondary';
+};
 
-const ButtonLink: FC<ButtonLinkProps> = ({ children, className, ...props }) => (
-	<Link className={classNames(className, styles.button)} {...props}>
+const ButtonLink: FC<ButtonLinkProps> = ({
+	children,
+	className,
+	kind = 'primary',
+	...props
+}) => (
+	<Link
+		className={classNames(className, styles.button, styles[kind])}
+		{...props}
+	>
 		{children}
 	</Link>
 );
