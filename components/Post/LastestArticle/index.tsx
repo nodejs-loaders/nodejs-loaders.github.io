@@ -1,6 +1,7 @@
-import type { FC } from 'react';
 import { getPostsMetadata } from '~/lib/post';
 import ArticleCard from '../ArticleCard/index.tsx';
+import styles from './index.module.css';
+import type { FC } from 'react';
 
 type LastestArticleProps = {
 	limit: number;
@@ -14,11 +15,11 @@ const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 	});
 
 	return (
-		<div className="w-full">
+		<div className={styles.wrapper}>
 			{usedPostsMetadata.length === 0 ? (
 				<p>No posts found.</p>
 			) : (
-				<ul className="flex flex-col items-center justify-between gap-4 xl:flex-row">
+				<ul>
 					{usedPostsMetadata.map(postMetadata => (
 						<li key={postMetadata.slug}>
 							<ArticleCard {...postMetadata} />

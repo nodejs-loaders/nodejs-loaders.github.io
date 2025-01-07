@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation';
 import { getContent } from '~/lib/content';
 import { getAllPosts } from '~/lib/post';
-import AuthorsList from '~/components/Common/AuthorsList';
+import ArticleHeader from '~/components/Post/ArticleHeader';
+import styles from './page.module.css';
 import type { FC } from 'react';
 import type { PostFrontmatter } from '~/types/frontmatter';
 import '~/styles/markdown.css';
@@ -34,14 +35,12 @@ const Page: FC<PageProps> = async ({ params }) => {
 	const { content, frontmatter } = mdxResult;
 
 	return (
-		<main className="container mx-auto px-4">
-			<header className="my-8 border-gray-200 border-b-2 dark:border-gray-800">
-				<h1 className="font-bold text-3xl lg:text-4xl">{frontmatter.title}</h1>
-				<p className="text-gray-500 text-lg dark:text-gray-400">
-					{frontmatter.description}
-				</p>
-				<AuthorsList authors={frontmatter.authors} />
-			</header>
+		<main className={styles.page}>
+			<ArticleHeader
+				title={frontmatter.title}
+				description={frontmatter.description}
+				authors={frontmatter.authors}
+			/>
 			<article className="md-content">{content}</article>
 		</main>
 	);

@@ -1,0 +1,41 @@
+.hero {
+	@apply flex
+		h-[calc(100vh-4rem)]
+		w-full
+		flex-col
+		items-center
+		justify-center
+		gap-8
+		bg-gradient-to-b
+		from-transparent
+		via-green-50/50
+		to-green-50
+		px-10
+		dark:from-transparent
+		dark:via-green-800/25
+		dark:to-green-800;
+
+	h1 {
+		@apply text-center
+			font-bold
+			text-4xl;
+
+		code {
+			@apply rounded
+				bg-gray-200
+				p-1
+				dark:bg-gray-800
+				dark:text-gray-200;
+		}
+	}
+
+	p {
+		@apply text-center
+			dark:text-gray-200;
+	}
+
+	.actions {
+		@apply flex
+			gap-4;
+	}
+}
