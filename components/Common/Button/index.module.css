@@ -1,0 +1,33 @@
+.button {
+	@apply border-2
+		border-solid
+		border-gray-600
+		rounded
+		inline-flex
+		items-center
+		justify-center
+		gap-2
+		px-4
+		py-2
+		text-gray-600
+		transition
+		duration-300
+		ease-in-out
+		dark:text-gray-300
+		dark:border-gray-300;
+
+	&:hover {
+		@apply bg-green-500
+			text-white
+			dark:bg-green-400
+			dark:text-gray-900;
+	}
+
+	&:focus {
+		@apply outline-none;
+	}
+
+	svg {
+		@apply size-5;
+	}
+}
