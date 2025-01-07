@@ -49,7 +49,7 @@ const Page: FC<PageProps> = async ({ params }) => {
 	return (
 		<main className="container mx-auto px-4 py-8">
 			<h1 className="mb-4 font-bold text-3xl lg:text-4xl">Article list</h1>
-			<p className='mb-4 max-w-screen-md text-gray-500 dark:text-gray-400'>
+			<p className="mb-4 max-w-screen-md text-gray-500 dark:text-gray-400">
 				Here you can find all the articles available on the website. You can
 				filter them by category using the dropdown below.
 			</p>
