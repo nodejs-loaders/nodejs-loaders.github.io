@@ -5,3 +5,12 @@
 - CD on main branch to deploy to gh-pages https://github.com/gregrickaby/nextjs-github-pages/blob/main/.github/workflows/deploy.yml
 - Add documentation of the project (this repo)
 - Add a `CONTRIBUTING.md` file
+- Design OG image for the project
+- Create engine to generate static OG images
+- `robots.txt` file
+- `sitemap.xml` generation
+- `rss` feed generation
+- Add GH pr template
+- Add GH issue template
+- Add openSSF scorecard
+- Add dependabot
