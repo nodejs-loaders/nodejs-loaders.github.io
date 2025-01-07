@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation';
 import { getContent } from '~/lib/content';
 import { getAllPosts } from '~/lib/post';
-import { getGitHubAvatarUrl } from '~/utils/gitHubUtils';
+import AuthorsList from '~/components/Common/AuthorsList';
 import type { FC } from 'react';
 import type { PostFrontmatter } from '~/types/frontmatter';
+import '~/styles/markdown.css';
 
 type postParams = {
 	article: string;
@@ -31,7 +32,6 @@ const Page: FC<PageProps> = async ({ params }) => {
 	if (!mdxResult) notFound();
 
 	const { content, frontmatter } = mdxResult;
-	const authors = frontmatter.authors.split(',').map(author => author.trim());
 
 	return (
 		<main className="container mx-auto px-4">
@@ -40,20 +40,9 @@ const Page: FC<PageProps> = async ({ params }) => {
 				<p className="text-gray-500 text-lg dark:text-gray-400">
 					{frontmatter.description}
 				</p>
-				<div className="flex items-center space-x-2 py-2.5">
-					{authors.map(author => (
-						<img
-							key={author}
-							src={getGitHubAvatarUrl(author)}
-							alt={author}
-							className="size-8 rounded-md"
-						/>
-					))}
-				</div>
+				<AuthorsList authors={frontmatter.authors} />
 			</header>
-			<article className="prose lg:prose-xl dark:prose-invert">
-				{content}
-			</article>
+			<article className="md-content">{content}</article>
 		</main>
 	);
 };

@@ -9,14 +9,16 @@ type LastestArticleProps = {
 const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 	const postsMetadata = await getPostsMetadata();
 
-	const usedPostsMetadata = postsMetadata.slice(0, limit);
+	const usedPostsMetadata = postsMetadata.slice(0, limit).sort((a, b) => {
+		return new Date(b.date).getTime() - new Date(a.date).getTime();
+	});
 
 	return (
-		<div>
+		<div className="w-full">
 			{usedPostsMetadata.length === 0 ? (
 				<p>No posts found.</p>
 			) : (
-				<ul>
+				<ul className="flex flex-col items-center justify-between gap-4 xl:flex-row">
 					{usedPostsMetadata.map(postMetadata => (
 						<li key={postMetadata.slug}>
 							<ArticleCard {...postMetadata} />
