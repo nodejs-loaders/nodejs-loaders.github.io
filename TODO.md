@@ -6,7 +6,6 @@
 - Add a `CONTRIBUTING.md` file
 - Design OG image for the project
 - Create engine to generate static OG images
-- `robots.txt` file
 - `sitemap.xml` generation
 - `rss` feed generation
 - Add GH pr template
