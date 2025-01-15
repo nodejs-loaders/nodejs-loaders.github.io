@@ -1,0 +1,7 @@
+exports[`CategoriesSelector > should render with an active category 1`] = `
+"<ul class=\\"categoriesSelector\\"><li class=\\"item active\\"><a href=\\"/article/slug1\\">category1</a></li><li class=\\"item\\"><a href=\\"/article/slug2\\">category2</a></li></ul>"
+`;
+
+exports[`CategoriesSelector > should render with no active category 1`] = `
+"<ul class=\\"categoriesSelector\\"><li class=\\"item active\\"><a href=\\"/article/slug1\\">category1</a></li><li class=\\"item\\"><a href=\\"/article/slug2\\">category2</a></li></ul>"
+`;

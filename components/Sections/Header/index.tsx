@@ -1,0 +1,44 @@
+import Link from 'next/link';
+import Logo from '~/components/Icons/Logo';
+import ButtonLink from '~/components/Common/Button/Link';
+import GithubIcon from '~/components/Icons/Github';
+import styles from './index.module.css';
+import type { FC } from 'react';
+
+const NAVIGATION = [
+	{
+		href: '/article',
+		label: 'Article',
+	},
+	{
+		href: '/#lastest-article',
+		label: 'Lastest Article',
+	},
+];
+
+const Header: FC = () => (
+	<header className={styles.header}>
+		<Link href="/" className={styles.logo}>
+			<Logo width={32} height={32} aria-label="Nodejs-loaders Logo" />
+			Nodejs-loaders
+		</Link>
+		<nav className={styles.nav}>
+			<ul>
+				{NAVIGATION.map(item => (
+					<li key={item.href}>
+						<ButtonLink href={item.href} kind="special">
+							{item.label}
+						</ButtonLink>
+					</li>
+				))}
+				<li>
+					<Link href="https://github.com/nodejs-loaders">
+						<GithubIcon width={32} height={32} aria-label="Github" />
+					</Link>
+				</li>
+			</ul>
+		</nav>
+	</header>
+);
+
+export default Header;

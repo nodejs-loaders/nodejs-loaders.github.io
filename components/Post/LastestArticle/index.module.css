@@ -1,0 +1,12 @@
+.wrapper {
+	@apply w-full;
+
+	ul {
+		@apply flex
+			flex-col
+			items-center
+			justify-between
+			gap-4
+			xl:flex-row;
+	}
+}
