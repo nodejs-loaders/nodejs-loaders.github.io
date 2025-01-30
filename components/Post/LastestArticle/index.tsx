@@ -22,7 +22,7 @@ const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 				<ul>
 					{usedPostsMetadata.map(postMetadata => (
 						<li key={postMetadata.slug}>
-							<ArticleCard {...postMetadata} />
+							<ArticleCard {...postMetadata} as="li" />
 						</li>
 					))}
 				</ul>

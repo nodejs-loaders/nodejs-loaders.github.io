@@ -15,3 +15,4 @@
 - Add GH issue template
 - Add openSSF scorecard
 - Add dependabot
+- Add metata (title, description) _SEO_

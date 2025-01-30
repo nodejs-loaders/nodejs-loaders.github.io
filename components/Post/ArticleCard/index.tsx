@@ -1,9 +1,11 @@
 import styles from './index.module.css';
+import { postSlug2Href } from '~/utils/postUtils.ts';
 import type { FC } from 'react';
-import type { PostFrontmatter } from '~/types/frontmatter';
+import type { PostFrontmatter } from '~/types/frontmatter.ts';
 
 type ArticleCardProps = PostFrontmatter & {
 	slug: string;
+	as?: 'div' | 'li';
 };
 
 const ArticleCard: FC<ArticleCardProps> = ({
@@ -12,10 +14,11 @@ const ArticleCard: FC<ArticleCardProps> = ({
 	authors,
 	date,
 	slug,
+	as: Component = 'div',
 }) => (
-	<div className={styles.content}>
+	<Component className={styles.content}>
 		<h2 className={styles.title}>
-			<a href={`article/post/${slug}`}>{title}</a>
+			<a href={postSlug2Href(slug)}>{title}</a>
 		</h2>
 		<p className={styles.description}>{description}</p>
 		<div className={styles.meta}>
@@ -24,7 +27,7 @@ const ArticleCard: FC<ArticleCardProps> = ({
 			</span>
 			<span className={styles.date}>{date}</span>
 		</div>
-	</div>
+	</Component>
 );
 
 export default ArticleCard;
