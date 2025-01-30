@@ -1,9 +1,9 @@
-import ButtonLink from '~/components/Common/Button/Link';
+import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
+import { NPMIcon } from '~/components/Icons/NPM.tsx';
 import styles from './index.module.css';
 import type { FC } from 'react';
-import NPMIcon from '~/components/Icons/NPM';
 
-const Hero: FC = () => (
+export const Hero: FC = () => (
 	<section className={styles.hero}>
 		<h1>
 			<code>Nodejs-Loaders</code> - A collection of loaders for Node.js
@@ -27,4 +27,3 @@ const Hero: FC = () => (
 	</section>
 );
 
-export default Hero;

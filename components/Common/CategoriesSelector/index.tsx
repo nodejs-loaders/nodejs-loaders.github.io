@@ -10,7 +10,7 @@ type CategoriesSelectorProps = {
 	}>;
 };
 
-const CategoriesSelector: FC<CategoriesSelectorProps> = ({
+export const CategoriesSelector: FC<CategoriesSelectorProps> = ({
 	currentCategories,
 	categories,
 }) => (
@@ -31,5 +31,3 @@ const CategoriesSelector: FC<CategoriesSelectorProps> = ({
 		))}
 	</ul>
 );
-
-export default CategoriesSelector;

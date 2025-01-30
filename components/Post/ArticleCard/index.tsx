@@ -8,7 +8,7 @@ type ArticleCardProps = PostFrontmatter & {
 	as?: 'div' | 'li';
 };
 
-const ArticleCard: FC<ArticleCardProps> = ({
+export const ArticleCard: FC<ArticleCardProps> = ({
 	title,
 	description,
 	authors,
@@ -29,5 +29,3 @@ const ArticleCard: FC<ArticleCardProps> = ({
 		</div>
 	</Component>
 );
-
-export default ArticleCard;

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { postSlug2Href } from '../PostUtils.ts';
+import { postSlug2Href } from '../postUtils.ts';
 
 describe('PostUtils', () => {
 	describe('postSlug2Href', () => {

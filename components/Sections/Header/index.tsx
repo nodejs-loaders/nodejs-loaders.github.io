@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Logo from '~/components/Icons/Logo';
-import ButtonLink from '~/components/Common/Button/Link';
-import GithubIcon from '~/components/Icons/Github';
+import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
+import { Logo } from '~/components/Icons/Logo.tsx';
+import { GithubIcon } from '~/components/Icons/Github.tsx';
 import styles from './index.module.css';
 import type { FC } from 'react';
 
@@ -16,7 +16,7 @@ const NAVIGATION = [
 	},
 ];
 
-const Header: FC = () => (
+export const Header: FC = () => (
 	<header className={styles.header}>
 		<Link href="/" className={styles.logo}>
 			<Logo width={32} height={32} aria-label="Nodejs-loaders Logo" />
@@ -40,5 +40,3 @@ const Header: FC = () => (
 		</nav>
 	</header>
 );
-
-export default Header;

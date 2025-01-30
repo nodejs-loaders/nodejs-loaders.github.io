@@ -1,8 +1,8 @@
-import LastestArticle from '~/components/Post/LastestArticle';
+import { LastestArticle } from '~/components/Post/LastestArticle/index.tsx';
 import styles from './index.module.css';
 import type { FC } from 'react';
 
-const LastestArticleSection: FC = () => (
+export const LastestArticleSection: FC = () => (
 	<section id="lastest-article" className={styles.section}>
 		<div className={styles.header}>
 			<h2>Lastes Articles</h2>
@@ -11,5 +11,3 @@ const LastestArticleSection: FC = () => (
 		<LastestArticle limit={3} />
 	</section>
 );
-
-export default LastestArticleSection;

@@ -9,7 +9,7 @@ type AuthorsListProps = {
 	authors: string;
 };
 
-const AuthorsList: FC<AuthorsListProps> = ({ authors }) => {
+export const AuthorsList: FC<AuthorsListProps> = ({ authors }) => {
 	const authorsList = authors.split(', ').map(author => (
 		<Avatar key={author}>
 			<a
@@ -25,5 +25,3 @@ const AuthorsList: FC<AuthorsListProps> = ({ authors }) => {
 
 	return <div className={styles.wrapper}>{authorsList}</div>;
 };
-
-export default AuthorsList;

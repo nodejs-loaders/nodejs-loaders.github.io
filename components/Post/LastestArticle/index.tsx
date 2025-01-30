@@ -1,5 +1,5 @@
-import { getPostsMetadata } from '~/lib/post';
-import ArticleCard from '../ArticleCard/index.tsx';
+import { getPostsMetadata } from '~/lib/post.ts';
+import { ArticleCard } from '../ArticleCard/index.tsx';
 import styles from './index.module.css';
 import type { FC } from 'react';
 
@@ -7,7 +7,7 @@ type LastestArticleProps = {
 	limit: number;
 };
 
-const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
+export const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 	const postsMetadata = await getPostsMetadata();
 
 	const usedPostsMetadata = postsMetadata.slice(0, limit).sort((a, b) => {
@@ -30,5 +30,3 @@ const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 		</div>
 	);
 };
-
-export default LastestArticle;

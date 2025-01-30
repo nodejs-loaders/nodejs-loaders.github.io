@@ -1,4 +1,4 @@
-import AuthorsList from '~/components/Common/AuthorsList';
+import { AuthorsList } from '~/components/Common/AuthorsList/index.tsx';
 import styles from './index.module.css';
 import type { FC } from 'react';
 
@@ -8,7 +8,7 @@ type ArticleHeaderProps = {
 	authors: string;
 };
 
-const ArticleHeader: FC<ArticleHeaderProps> = ({
+export const ArticleHeader: FC<ArticleHeaderProps> = ({
 	title,
 	description,
 	authors,
@@ -19,5 +19,3 @@ const ArticleHeader: FC<ArticleHeaderProps> = ({
 		<AuthorsList authors={authors} />
 	</header>
 );
-
-export default ArticleHeader;

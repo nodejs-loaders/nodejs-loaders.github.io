@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import Header from '~/components/Sections/Header';
+import { Header } from '~/components/Sections/Header/index.tsx';
 import type { FC, PropsWithChildren } from 'react';
 import '~/styles/globals.css';
 

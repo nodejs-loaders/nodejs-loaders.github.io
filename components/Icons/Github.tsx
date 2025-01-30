@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from 'react';
 
-const GithubIcon: FC<SVGProps<SVGSVGElement>> = props => (
+export const GithubIcon: FC<SVGProps<SVGSVGElement>> = props => (
 	<svg
 		viewBox="-0.5 -0.5 16 16"
 		fill="none"
@@ -15,5 +15,3 @@ const GithubIcon: FC<SVGProps<SVGSVGElement>> = props => (
 		/>
 	</svg>
 );
-
-export default GithubIcon;

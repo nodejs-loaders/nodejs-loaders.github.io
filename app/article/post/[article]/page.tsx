@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
-import { getContent } from '~/lib/content';
-import { getAllPosts } from '~/lib/post';
-import ArticleHeader from '~/components/Post/ArticleHeader';
+import { getContent } from '~/lib/content.ts';
+import { getAllPosts } from '~/lib/post.ts';
+import { ArticleHeader } from '~/components/Post/ArticleHeader/index.tsx';
 import styles from './page.module.css';
 import type { FC } from 'react';
 import type { PostFrontmatter } from '~/types/frontmatter';

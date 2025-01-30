@@ -7,7 +7,7 @@ type ButtonLinkProps = ComponentProps<typeof Link> & {
 	kind?: 'primary' | 'secondary' | 'special';
 };
 
-const ButtonLink: FC<ButtonLinkProps> = ({
+export const ButtonLink: FC<ButtonLinkProps> = ({
 	children,
 	className,
 	kind = 'primary',
@@ -20,5 +20,3 @@ const ButtonLink: FC<ButtonLinkProps> = ({
 		{children}
 	</Link>
 );
-
-export default ButtonLink;

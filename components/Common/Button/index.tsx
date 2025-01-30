@@ -6,7 +6,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	kind?: 'primary' | 'secondary' | 'special';
 };
 
-const Button: FC<ButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
 	children,
 	disabled,
 	className,
@@ -22,5 +22,3 @@ const Button: FC<ButtonProps> = ({
 		{children}
 	</button>
 );
-
-export default Button;

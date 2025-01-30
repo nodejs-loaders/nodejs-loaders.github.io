@@ -1,6 +1,6 @@
-import CategoriesSelector from '~/components/Common/CategoriesSelector';
-import { getPostsMetadata } from '~/lib/post';
-import ArticleCard from '~/components/Post/ArticleCard';
+import { CategoriesSelector } from '~/components/Common/CategoriesSelector/index.tsx';
+import { ArticleCard } from '~/components/Post/ArticleCard/index.tsx';
+import { getPostsMetadata } from '~/lib/post.ts';
 import styles from './page.module.css';
 import type { FC } from 'react';
 
