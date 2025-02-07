@@ -7,11 +7,13 @@ Thank you for considering contributing to Node.js Loaders website! Contributions
 Commands specifically relevant to this project are:
 
 Run the frontend unit tests:
+
 ```bash
 node --run test:unit
 ```
 
 Lint, format, and check types can be handled by:
+
 ```bash
 node --run pre-commit
 ```
