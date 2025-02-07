@@ -1,0 +1,73 @@
+.button {
+	@apply rounded
+		inline-flex
+		items-center
+		justify-center
+		gap-2
+		px-4
+		py-2
+		transition
+		duration-300
+		ease-in-out;
+
+	&:focus {
+		@apply outline-none;
+	}
+
+	svg {
+		@apply size-5;
+	}
+}
+
+.primary {
+	@apply border-2
+		border-solid
+		border-transparent
+		bg-green-500
+		text-white
+		dark:bg-green-400
+		dark:text-gray-900;
+
+	&:hover {
+		@apply border-gray-600
+			bg-transparent
+			text-gray-600
+			dark:text-gray-300
+			dark:border-gray-300;
+	}
+}
+
+.secondary {
+	@apply border-2
+		border-solid
+		border-transparent
+		bg-gray-600
+		text-white
+		dark:bg-gray-300
+		dark:text-gray-900;
+
+	&:hover {
+		@apply border-gray-600
+			bg-transparent
+			text-gray-600
+			dark:text-gray-300
+			dark:border-gray-300;
+	}
+}
+
+.special {
+	@apply border-2
+		border-solid
+		border-gray-600
+		bg-transparent
+		text-gray-600
+		dark:text-gray-300
+		dark:border-gray-300;
+
+	&:hover {
+		@apply bg-green-500
+			text-white
+			dark:bg-green-400
+			dark:text-gray-900;
+	}
+}

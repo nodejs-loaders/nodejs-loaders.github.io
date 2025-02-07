@@ -1,0 +1,7 @@
+exports[`ArticleCard > should render as a div by default 1`] = `
+"<div class=\\"content\\"><h2 class=\\"title\\"><a href=\\"article/post/test-title\\">Test Title</a></h2><p class=\\"description\\">Test Description</p><div class=\\"meta\\"><span class=\\"author\\">Author1,  Author2</span><span class=\\"date\\">2025-07-01</span></div></div>"
+`;
+
+exports[`ArticleCard > should render as a li when specified 1`] = `
+"<li class=\\"content\\"><h2 class=\\"title\\"><a href=\\"article/post/test-title\\">Test Title</a></h2><p class=\\"description\\">Test Description</p><div class=\\"meta\\"><span class=\\"author\\">Author1,  Author2</span><span class=\\"date\\">2025-07-01</span></div></li>"
+`;
