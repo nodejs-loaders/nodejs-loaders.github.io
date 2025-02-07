@@ -1,5 +1,7 @@
 # nodejs-loaders.github.io
 
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/nodejs-loaders/nodejs-loaders.github.io/badge)](https://scorecard.dev/viewer/?uri=github.com/nodejs-loaders/nodejs-loaders.github.io)
+
 A showcase website for the `nodejs-loader` project
 
 ## Development
