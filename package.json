@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "biome:ci": "biome ci ./",
     "biome:format:fix": "biome format --fix ./",
