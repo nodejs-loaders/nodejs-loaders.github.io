@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://json.schemastore.org/dependabot-2.0.json
+
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    commit-message:
+        prefix: setup
+        include: scope
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: npm
+    commit-message:
+        prefix: dep
+        include: scope
+    directory: /
+    ignore:
+      # Manually update major versions of @types/node with the version specified within .nvmrc
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+    open-pull-requests-limit: 10
+    schedule:
+      interval: monthly
+    groups:
+      next-js:
+        patterns:
+          - 'next*'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+      nodejs-loaders:
+        patterns:
+          - '@nodejs-loaders/*'
