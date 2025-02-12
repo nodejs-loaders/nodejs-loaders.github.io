@@ -4,6 +4,9 @@
 		"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.css", "**/*.json"],
 		"ignore": ["./node_modules", "./.next", "./out"]
 	},
+	"organizeImports": {
+		"enabled": false
+	},
 	"formatter": {
 		"enabled": true,
 		"useEditorconfig": true
