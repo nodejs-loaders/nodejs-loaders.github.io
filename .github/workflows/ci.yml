@@ -3,11 +3,11 @@
 name: Tests
 
 on:
+  # we use devlop branch for now before publishing the website
   push:
-    branches: [ "main" ]
+    branches: [ "main", "devlop" ]
   pull_request:
-    # we use devlop branch for now before publishing the website
-    branches: [ "main", "develop" ]
+    branches: [ "main", "devlop" ]
 
 jobs:
   quality:
