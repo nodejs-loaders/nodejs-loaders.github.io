@@ -3,6 +3,7 @@ import { ArticleCard } from '~/components/Post/ArticleCard/index.tsx';
 import { getPostsMetadata } from '~/lib/post.ts';
 import styles from './page.module.css';
 import type { FC } from 'react';
+import type { Metadata } from 'next';
 
 type CategoriesParams = {
 	categories?: string[];
@@ -41,6 +42,17 @@ export const generateStaticParams = () => {
 	];
 
 	return params;
+};
+
+export const generateMetadata = async ({
+	params,
+}: PageProps): Promise<Metadata> => {
+	const currentCategories = (await params).categories || [];
+
+	return {
+		title: `Articles${currentCategories.length > 0 ? ` - ${currentCategories.join(', ')}` : ''}`,
+		description: 'Here you can find all the articles available on the website.',
+	};
 };
 
 const Page: FC<PageProps> = async ({ params }) => {
