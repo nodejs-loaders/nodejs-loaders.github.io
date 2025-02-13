@@ -1,3 +1,5 @@
+@reference "./globals.css";
+
 .md-content {
 	h1 {
 		@apply text-4xl
@@ -94,7 +96,7 @@
 		@apply text-sm
 			text-black
 			bg-gray-200
-			rounded
+			rounded-sm
 			p-1
 			dark:bg-gray-800
 			dark:text-gray-200;
@@ -102,7 +104,7 @@
 
 	pre {
 		@apply bg-gray-200
-			rounded
+			rounded-sm
 			p-4
 			my-4
 			border
@@ -115,7 +117,7 @@
 	img {
 		@apply mx-auto
 			my-4
-			rounded
+			rounded-sm
 			shadow-lg;
 	}
 
@@ -147,7 +149,7 @@
 	figure {
 		@apply mx-auto
 			my-4
-			rounded
+			rounded-sm
 			shadow-lg;
 	}
 
@@ -159,7 +161,7 @@
 
 	details {
 		@apply bg-gray-200
-			rounded
+			rounded-sm
 			p-2
 			my-4
 			dark:bg-gray-800;

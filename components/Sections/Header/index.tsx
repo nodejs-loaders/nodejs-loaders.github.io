@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
 import { Logo } from '~/components/Icons/Logo.tsx';
 import { GithubIcon } from '~/components/Icons/Github.tsx';
-import styles from './index.module.css';
 import type { FC } from 'react';
 
 const NAVIGATION = [
@@ -17,13 +16,16 @@ const NAVIGATION = [
 ];
 
 export const Header: FC = () => (
-	<header className={styles.header}>
-		<Link href="/" className={styles.logo}>
+	<header className="flex h-16 w-full items-center justify-between border-gray-600 border-b-2 bg-gray-50 px-4 text-gray-600 dark:text-gray-300dark:bg-gray-900">
+		<Link
+			href="/"
+			className="inline-flex cursor-pointer items-center gap-2 rounded px-1 py-0.5 text-lg hover:bg-gray-200 hover:dark:bg-gray-800"
+		>
 			<Logo width={32} height={32} aria-label="Nodejs-loaders Logo" />
 			Nodejs-loaders
 		</Link>
-		<nav className={styles.nav}>
-			<ul>
+		<nav className="flex items-center gap-4">
+			<ul className="flex items-center gap-4">
 				{NAVIGATION.map(item => (
 					<li key={item.href}>
 						<ButtonLink href={item.href} kind="special">
@@ -33,7 +35,12 @@ export const Header: FC = () => (
 				))}
 				<li>
 					<Link href="https://github.com/nodejs-loaders">
-						<GithubIcon width={32} height={32} aria-label="Github" />
+						<GithubIcon
+							width={32}
+							height={32}
+							aria-label="Github"
+							className="rounded-xs p-1 hover:bg-gray-200 hover:dark:bg-gray-800"
+						/>
 					</Link>
 				</li>
 			</ul>

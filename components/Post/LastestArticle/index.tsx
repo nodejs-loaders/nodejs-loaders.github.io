@@ -1,6 +1,5 @@
 import { getPostsMetadata } from '~/lib/post.ts';
 import { ArticleCard } from '../ArticleCard/index.tsx';
-import styles from './index.module.css';
 import type { FC } from 'react';
 
 type LastestArticleProps = {
@@ -15,11 +14,11 @@ export const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 	});
 
 	return (
-		<div className={styles.wrapper}>
+		<div className="w-full">
 			{usedPostsMetadata.length === 0 ? (
 				<p>No posts found.</p>
 			) : (
-				<ul>
+				<ul className="grid grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{usedPostsMetadata.map(postMetadata => (
 						<li key={postMetadata.slug}>
 							<ArticleCard {...postMetadata} as="li" />

@@ -7,4 +7,3 @@ jsdom(undefined, {
 
 register('@nodejs-loaders/alias', import.meta.url);
 register('@nodejs-loaders/tsx', import.meta.url);
-register('@nodejs-loaders/css-module', import.meta.url);
