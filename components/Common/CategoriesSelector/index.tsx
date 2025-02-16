@@ -25,6 +25,8 @@ export const CategoriesSelector: FC<CategoriesSelectorProps> = ({
 							currentCategories.includes(category.slug),
 					}
 				)}
+				data-test-current-category={currentCategories.includes(category.slug)}
+				aria-current={currentCategories.includes(category.slug)}
 			>
 				<a href={`/article/${category.slug}`.replace(/\/$/, '')}>
 					{category.category}
