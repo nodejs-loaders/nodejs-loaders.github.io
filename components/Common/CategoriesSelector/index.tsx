@@ -20,7 +20,7 @@ export const CategoriesSelector: FC<CategoriesSelectorProps> = ({
 				className={classNames(
 					'flex cursor-pointer items-center rounded-t-md px-2 py-1 transition duration-200 hover:bg-green-400 hover:text-white dark:hover:bg-green-600 dark:hover:text-white',
 					{
-						'bg-green-400 text-white :dark:bg-green-600':
+						'bg-green-400 text-white dark:bg-green-600':
 							(currentCategories.length === 0 && i === 0) ||
 							currentCategories.includes(category.slug),
 					}
