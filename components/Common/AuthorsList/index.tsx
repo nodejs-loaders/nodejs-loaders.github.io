@@ -1,7 +1,6 @@
 import { getGitHubAvatarUrl, getGithubProfileUrl } from '~/utils/gitHubUtils';
 import { getAcronymFromString } from '~/utils/stringUtils';
 import { Avatar, AvatarImage, AvatarFallback } from '../Avatar/index.tsx';
-import styles from './index.module.css';
 import type { FC } from 'react';
 
 type AuthorsListProps = {
@@ -23,5 +22,5 @@ export const AuthorsList: FC<AuthorsListProps> = ({ authors }) => {
 		</Avatar>
 	));
 
-	return <div className={styles.wrapper}>{authorsList}</div>;
+	return <div className="flex space-x-2 py-2">{authorsList}</div>;
 };

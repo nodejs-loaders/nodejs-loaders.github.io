@@ -1,7 +1,6 @@
 'use client';
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
 import classNames from 'classnames';
-import styles from './index.module.css';
 import type { ComponentProps } from 'react';
 
 const Avatar = ({
@@ -11,7 +10,10 @@ const Avatar = ({
 }: ComponentProps<typeof AvatarPrimitive.Root>) => (
 	<AvatarPrimitive.Root
 		ref={ref}
-		className={classNames(className, styles.root)}
+		className={classNames(
+			className,
+			'flex size-10 shrink-0 overflow-hidden rounded-md shadow-green-300 shadow-sm outline-2 outline-green-300 transition-shadow hover:shadow-green-400 hover:shadow-md dark:shadow-green-800 dark:outline-green-800 hover:dark:shadow-green-700'
+		)}
 		{...props}
 	/>
 );
@@ -25,7 +27,7 @@ const AvatarImage = ({
 }: ComponentProps<typeof AvatarPrimitive.Image>) => (
 	<AvatarPrimitive.Image
 		ref={ref}
-		className={classNames(styles.image, className)}
+		className={classNames('aspect-square size-full', className)}
 		{...props}
 	/>
 );
@@ -39,7 +41,10 @@ const AvatarFallback = ({
 }: ComponentProps<typeof AvatarPrimitive.Fallback>) => (
 	<AvatarPrimitive.Fallback
 		ref={ref}
-		className={classNames(styles.fallback, className)}
+		className={classNames(
+			'flex size-full items-center justify-center rounded-md bg-green-100 font-bold text-base text-black dark:bg-green-800 dark:text-white',
+			className
+		)}
 		{...props}
 	/>
 );

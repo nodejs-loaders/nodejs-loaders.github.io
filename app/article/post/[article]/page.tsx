@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import { getContent } from '~/lib/content.ts';
 import { getAllPosts } from '~/lib/post.ts';
 import { ArticleHeader } from '~/components/Post/ArticleHeader/index.tsx';
-import styles from './page.module.css';
 import type { FC } from 'react';
 import type { Metadata } from 'next';
 import type { PostFrontmatter } from '~/types/frontmatter';
@@ -54,7 +53,7 @@ const Page: FC<PageProps> = async ({ params }) => {
 	const { content, frontmatter } = mdxResult;
 
 	return (
-		<main className={styles.page}>
+		<main className="container mx-auto px-4">
 			<ArticleHeader
 				title={frontmatter.title}
 				description={frontmatter.description}
