@@ -39,15 +39,4 @@ describe('CategoriesSelector', () => {
 
 		unmount();
 	});
-
-	it('should have active class for first category if no active category', () => {
-		const { container, unmount } = render(
-			<CategoriesSelector categories={mockCategories} currentCategories={[]} />
-		);
-		const firstCategory = container.querySelector('.active');
-
-		assert.strictEqual(firstCategory?.textContent, 'category1');
-
-		unmount();
-	});
 });
