@@ -16,7 +16,7 @@ const NAVIGATION = [
 ];
 
 export const Header: FC = () => (
-	<header className='flex w-full flex-col flex-wrap items-center justify-between gap-2 border-gray-600 border-b-2 bg-gray-50 px-4 py-2 text-gray-600 sm:flex-row dark:bg-gray-900 dark:text-gray-300'>
+	<header className="flex w-full flex-col flex-wrap items-center justify-between gap-2 border-gray-600 border-b-2 bg-gray-50 px-4 py-2 text-gray-600 sm:flex-row dark:bg-gray-900 dark:text-gray-300">
 		<Link
 			href="/"
 			className="inline-flex cursor-pointer items-center gap-2 rounded px-1 py-0.5 text-lg hover:bg-gray-200 hover:dark:bg-gray-800"
