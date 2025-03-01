@@ -44,7 +44,7 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: Restore Cache
-        uses: actions/cache/restore@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
+        uses: actions/cache/restore@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .next/cache
           key: build-${{ hashFiles('**/package-lock.json') }}
@@ -55,7 +55,7 @@ jobs:
       - name: Build Next.js
         run: node --run build
       - name: Save Cache
-        uses: actions/cache/save@0c907a75c2c80ebcb7f088228285e798b750cf8f # v4.2.1
+        uses: actions/cache/save@d4323d4df104b026a6aa633fdb11d772146be0bf # v4.2.2
         with:
           path: .next/cache
           key: build-${{ hashFiles('**/package-lock.json') }}
