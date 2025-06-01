@@ -1,6 +1,7 @@
+import withRspack from 'next-rspack';
 import type { NextConfig } from 'next';
 
-export default {
+const nextConfig: NextConfig = {
 	output: 'export',
 	typescript: {
 		ignoreBuildErrors: true,
@@ -8,4 +9,8 @@ export default {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
-} as NextConfig;
+};
+
+export default process.env.NODE_ENV === 'production'
+	? nextConfig
+	: withRspack(nextConfig);

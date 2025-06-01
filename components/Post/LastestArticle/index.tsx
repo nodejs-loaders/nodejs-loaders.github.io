@@ -20,9 +20,7 @@ export const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 			) : (
 				<ul className="grid grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
 					{usedPostsMetadata.map(postMetadata => (
-						<li key={postMetadata.slug}>
-							<ArticleCard {...postMetadata} as="li" />
-						</li>
+						<ArticleCard {...postMetadata} as="li" key={postMetadata.slug} />
 					))}
 				</ul>
 			)}
