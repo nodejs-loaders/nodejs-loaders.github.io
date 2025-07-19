@@ -41,7 +41,7 @@
     "geist": "~1.4.2",
     "postcss": "~8.5.3",
     "serve": "~14.2.4",
-    "tailwindcss": "^4.1.1",
+    "tailwindcss": "^4.1.11",
     "typescript": "~5.8.3"
   }
 }
