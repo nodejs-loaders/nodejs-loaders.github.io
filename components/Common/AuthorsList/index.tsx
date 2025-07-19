@@ -1,7 +1,7 @@
+import type { FC } from 'react';
 import { getGitHubAvatarUrl, getGithubProfileUrl } from '~/utils/gitHubUtils';
 import { getAcronymFromString } from '~/utils/stringUtils';
-import { Avatar, AvatarImage, AvatarFallback } from '../Avatar/index.tsx';
-import type { FC } from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from '../Avatar/index.tsx';
 
 type AuthorsListProps = {
 	// xxx, yyy, zzz
@@ -9,14 +9,14 @@ type AuthorsListProps = {
 };
 
 export const AuthorsList: FC<AuthorsListProps> = ({ authors }) => {
-	const authorsList = authors.split(', ').map(author => (
+	const authorsList = authors.split(', ').map((author) => (
 		<Avatar key={author}>
 			<a
 				href={getGithubProfileUrl(author)}
-				target="_blank"
 				rel="noopener noreferrer"
+				target="_blank"
 			>
-				<AvatarImage src={getGitHubAvatarUrl(author)} alt={author} />
+				<AvatarImage alt={author} src={getGitHubAvatarUrl(author)} />
 				<AvatarFallback>{getAcronymFromString(author)}</AvatarFallback>
 			</a>
 		</Avatar>

@@ -1,11 +1,11 @@
 import type { FC, SVGProps } from 'react';
 
-export const NPMIcon: FC<SVGProps<SVGSVGElement>> = props => (
+export const NPMIcon: FC<SVGProps<SVGSVGElement>> = (props) => (
 	<svg
-		viewBox="0 0 24 24"
-		xmlns="http://www.w3.org/2000/svg"
-		width={24}
 		height={24}
+		viewBox="0 0 24 24"
+		width={24}
+		xmlns="http://www.w3.org/2000/svg"
 		{...props}
 	>
 		<path d="m0 0h24v24h-24z" fill="currentColor" opacity="0" />

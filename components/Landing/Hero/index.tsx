@@ -1,6 +1,6 @@
+import type { FC } from 'react';
 import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
 import { NPMIcon } from '~/components/Icons/NPM.tsx';
-import type { FC } from 'react';
 
 export const Hero: FC = () => (
 	<section className="flex h-[calc(100vh-4rem)] w-full flex-col items-center justify-center gap-8 bg-gradient-to-b from-transparent via-green-50/50 to-green-50 px-10 dark:from-transparent dark:via-green-800/25 dark:to-green-800">
@@ -23,7 +23,7 @@ export const Hero: FC = () => (
 				kind="secondary"
 			>
 				Discover us on NPM{' '}
-				<NPMIcon aria-label="NPM Logo" width={64} height={64} />
+				<NPMIcon aria-label="NPM Logo" height={64} width={64} />
 			</ButtonLink>
 		</div>
 	</section>

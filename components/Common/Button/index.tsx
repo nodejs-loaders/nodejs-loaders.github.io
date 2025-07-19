@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import type { FC, ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, FC } from 'react';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	kind?: 'primary' | 'secondary' | 'special';
@@ -78,9 +78,9 @@ export const Button: FC<ButtonProps> = ({
 	...props
 }) => (
 	<button
+		aria-disabled={disabled}
 		className={classNames(buttonBaseClasses, kindClasses[kind], className)}
 		disabled={disabled}
-		aria-disabled={disabled}
 		{...props}
 	>
 		{children}

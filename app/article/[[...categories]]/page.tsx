@@ -1,8 +1,8 @@
+import type { Metadata } from 'next';
+import type { FC } from 'react';
 import { CategoriesSelector } from '~/components/Common/CategoriesSelector/index.tsx';
 import { ArticleCard } from '~/components/Post/ArticleCard/index.tsx';
 import { getPostsMetadata } from '~/lib/post.ts';
-import type { FC } from 'react';
-import type { Metadata } from 'next';
 
 type CategoriesParams = {
 	categories?: string[];
@@ -37,7 +37,7 @@ const CATEGORIES = [
 export const generateStaticParams = () => {
 	const params = [
 		{ categories: [] }, // For the base route without any categories
-		...CATEGORIES.slice(1).map(category => ({ categories: [category.slug] })), // For each individual category
+		...CATEGORIES.slice(1).map((category) => ({ categories: [category.slug] })), // For each individual category
 	];
 
 	return params;
@@ -49,8 +49,8 @@ export const generateMetadata = async ({
 	const currentCategories = (await params).categories || [];
 
 	return {
-		title: `Articles${currentCategories.length > 0 ? ` - ${currentCategories.join(', ')}` : ''}`,
 		description: 'Here you can find all the articles available on the website.',
+		title: `Articles${currentCategories.length > 0 ? ` - ${currentCategories.join(', ')}` : ''}`,
 	};
 };
 
@@ -66,8 +66,8 @@ const Page: FC<PageProps> = async ({ params }) => {
 				filter them by category using the dropdown below.
 			</p>
 			<CategoriesSelector
-				currentCategories={currentCategories}
 				categories={CATEGORIES}
+				currentCategories={currentCategories}
 			/>
 			{postsMetadata.length === 0 ? (
 				<div className="mt-8">
@@ -77,7 +77,7 @@ const Page: FC<PageProps> = async ({ params }) => {
 				</div>
 			) : (
 				<div className="grid grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{postsMetadata.map(post => (
+					{postsMetadata.map((post) => (
 						<ArticleCard key={post.slug} {...post} />
 					))}
 				</div>

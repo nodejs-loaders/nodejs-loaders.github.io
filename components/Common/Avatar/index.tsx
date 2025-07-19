@@ -9,11 +9,11 @@ const Avatar = ({
 	...props
 }: ComponentProps<typeof AvatarPrimitive.Root>) => (
 	<AvatarPrimitive.Root
-		ref={ref}
 		className={classNames(
 			className,
-			'flex size-10 shrink-0 overflow-hidden rounded-md shadow-green-300 shadow-sm outline-2 outline-green-300 transition-shadow hover:shadow-green-400 hover:shadow-md dark:shadow-green-800 dark:outline-green-800 hover:dark:shadow-green-700'
+			'flex size-10 shrink-0 overflow-hidden rounded-md shadow-green-300 shadow-sm outline-2 outline-green-300 transition-shadow hover:shadow-green-400 hover:shadow-md dark:shadow-green-800 dark:outline-green-800 hover:dark:shadow-green-700',
 		)}
+		ref={ref}
 		{...props}
 	/>
 );
@@ -26,8 +26,8 @@ const AvatarImage = ({
 	...props
 }: ComponentProps<typeof AvatarPrimitive.Image>) => (
 	<AvatarPrimitive.Image
-		ref={ref}
 		className={classNames('aspect-square size-full', className)}
+		ref={ref}
 		{...props}
 	/>
 );
@@ -40,11 +40,11 @@ const AvatarFallback = ({
 	...props
 }: ComponentProps<typeof AvatarPrimitive.Fallback>) => (
 	<AvatarPrimitive.Fallback
-		ref={ref}
 		className={classNames(
 			'flex size-full items-center justify-center rounded-md bg-green-100 font-bold text-base text-black dark:bg-green-800 dark:text-white',
-			className
+			className,
 		)}
+		ref={ref}
 		{...props}
 	/>
 );

@@ -1,11 +1,11 @@
 import fs from 'node:fs/promises';
-import { getContent } from './content.ts';
 import type { PostFrontmatter } from '~/types/frontmatter.ts';
+import { getContent } from './content.ts';
 
 export const getAllPosts = async () => {
 	const posts = await fs.readdir('content/post');
 
-	return posts.filter(post => post.endsWith('.mdx'));
+	return posts.filter((post) => post.endsWith('.mdx'));
 };
 
 export const getPostsMetadata = async (category?: string) => {
@@ -24,7 +24,7 @@ export const getPostsMetadata = async (category?: string) => {
 		});
 	}
 
-	if (category) return result.filter(post => post.category === category);
+	if (category) return result.filter((post) => post.category === category);
 
 	return result;
 };

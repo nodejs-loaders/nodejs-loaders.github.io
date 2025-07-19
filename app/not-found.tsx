@@ -1,5 +1,5 @@
-import { NotFoundSection } from '~/components/Sections/NotFound';
 import type { FC } from 'react';
+import { NotFoundSection } from '~/components/Sections/NotFound';
 
 const NotFoundPage: FC = () => <NotFoundSection />;
 

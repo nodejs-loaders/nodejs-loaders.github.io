@@ -1,5 +1,5 @@
-import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
 import type { FC } from 'react';
+import { ButtonLink } from '~/components/Common/Button/Link/index.tsx';
 
 export const NotFoundSection: FC = () => (
 	<main className="flex h-screen flex-col items-center justify-center gap-4">

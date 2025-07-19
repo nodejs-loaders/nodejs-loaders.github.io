@@ -1,14 +1,14 @@
 import classNames from 'classnames';
-import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { Header } from '~/components/Sections/Header/index.tsx';
-import type { FC, PropsWithChildren } from 'react';
+import { GeistSans } from 'geist/font/sans';
 import type { Metadata } from 'next';
+import type { FC, PropsWithChildren } from 'react';
+import { Header } from '~/components/Sections/Header/index.tsx';
 import '~/styles/globals.css';
 
 const metadata: Metadata = {
-	title: 'Nodejs-Loaders',
 	description: 'A collection of loaders for Node.js',
+	title: 'Nodejs-Loaders',
 };
 
 const RootLayout: FC<PropsWithChildren> = ({ children }) => (

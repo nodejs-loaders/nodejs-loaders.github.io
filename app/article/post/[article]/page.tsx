@@ -1,9 +1,9 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import type { FC } from 'react';
+import { ArticleHeader } from '~/components/Post/ArticleHeader/index.tsx';
 import { getContent } from '~/lib/content.ts';
 import { getAllPosts } from '~/lib/post.ts';
-import { ArticleHeader } from '~/components/Post/ArticleHeader/index.tsx';
-import type { FC } from 'react';
-import type { Metadata } from 'next';
 import type { PostFrontmatter } from '~/types/frontmatter';
 import '~/styles/markdown.css';
 
@@ -18,7 +18,7 @@ type PageProps = {
 export async function generateStaticParams() {
 	const posts = await getAllPosts();
 
-	return posts.map(post => {
+	return posts.map((post) => {
 		const article = post.split('.').slice(0, -1).join('.');
 		return { article };
 	});
@@ -37,8 +37,8 @@ export async function generateMetadata({
 	const { frontmatter } = mdxResult;
 
 	return {
-		title: frontmatter.title,
 		description: frontmatter.description,
+		title: frontmatter.title,
 	};
 }
 
@@ -55,9 +55,9 @@ const Page: FC<PageProps> = async ({ params }) => {
 	return (
 		<main className="container mx-auto px-4">
 			<ArticleHeader
-				title={frontmatter.title}
-				description={frontmatter.description}
 				authors={frontmatter.authors}
+				description={frontmatter.description}
+				title={frontmatter.title}
 			/>
 			<article className="md-content">{content}</article>
 		</main>

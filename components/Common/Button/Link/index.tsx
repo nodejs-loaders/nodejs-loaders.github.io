@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import classNames from 'classnames';
-import type { FC, ComponentProps } from 'react';
+import Link from 'next/link';
+import type { ComponentProps, FC } from 'react';
 
 type ButtonLinkProps = ComponentProps<typeof Link> & {
 	kind?: 'primary' | 'secondary' | 'special';

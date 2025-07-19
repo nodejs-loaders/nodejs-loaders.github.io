@@ -9,7 +9,7 @@ const BASE_DIR = path.join(process.cwd(), 'content');
  */
 const slugs2path = (slugs: Array<string>): string => {
 	const cleanSlugs = slugs
-		.map(slug => slug.replace(/\/$/, ''))
+		.map((slug) => slug.replace(/\/$/, ''))
 		.filter(Boolean)
 		.join('/');
 
@@ -17,7 +17,7 @@ const slugs2path = (slugs: Array<string>): string => {
 };
 
 export const getRawContent = async (
-	slugs: Array<string>
+	slugs: Array<string>,
 ): Promise<string | null> => {
 	const filePath = slugs2path(slugs);
 
@@ -25,16 +25,16 @@ export const getRawContent = async (
 };
 
 export const getContent = async <TFrontmatter = Record<string, unknown>>(
-	slugs: Array<string>
+	slugs: Array<string>,
 ) => {
 	const rawContent = await getRawContent(slugs);
 
 	if (!rawContent) return null;
 
 	return compileMDX<TFrontmatter>({
-		source: rawContent,
 		options: {
 			parseFrontmatter: true,
 		},
+		source: rawContent,
 	});
 };

@@ -1,6 +1,6 @@
+import type { FC } from 'react';
 import { getPostsMetadata } from '~/lib/post.ts';
 import { ArticleCard } from '../ArticleCard/index.tsx';
-import type { FC } from 'react';
 
 type LastestArticleProps = {
 	limit: number;
@@ -19,7 +19,7 @@ export const LastestArticle: FC<LastestArticleProps> = async ({ limit }) => {
 				<p>No posts found.</p>
 			) : (
 				<ul className="grid grid-cols-1 justify-center gap-4 md:grid-cols-2 lg:grid-cols-3">
-					{usedPostsMetadata.map(postMetadata => (
+					{usedPostsMetadata.map((postMetadata) => (
 						<ArticleCard {...postMetadata} as="li" key={postMetadata.slug} />
 					))}
 				</ul>

@@ -1,5 +1,5 @@
-import { AuthorsList } from '~/components/Common/AuthorsList/index.tsx';
 import type { FC } from 'react';
+import { AuthorsList } from '~/components/Common/AuthorsList/index.tsx';
 
 type ArticleHeaderProps = {
 	title: string;
