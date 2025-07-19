@@ -22,9 +22,9 @@
   "dependencies": {
     "@radix-ui/react-avatar": "~1.1.10",
     "classnames": "~2.5.1",
-    "next": "15.3.3",
+    "next": "15.3.4",
     "next-mdx-remote": "~5.0.0",
-    "next-rspack": "^15.3.3",
+    "next-rspack": "^15.3.4",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
