@@ -39,7 +39,7 @@
     "@types/react": "~19.1.6",
     "@types/react-dom": "~19.1.5",
     "geist": "~1.4.2",
-    "postcss": "~8.5.3",
+    "postcss": "~8.5.6",
     "serve": "~14.2.4",
     "tailwindcss": "^4.1.1",
     "typescript": "~5.8.3"
