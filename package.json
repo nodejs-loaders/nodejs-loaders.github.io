@@ -10,7 +10,7 @@
   },
   "description": "A showcase website for the `nodejs-loader` project",
   "devDependencies": {
-    "@biomejs/biome": "~2.1.2",
+    "@biomejs/biome": "~2.1.3",
     "@happy-dom/global-registrator": "^18.0.1",
     "@nodejs-loaders/alias": "2.1.2",
     "@nodejs-loaders/tsx": "1.1.2",
