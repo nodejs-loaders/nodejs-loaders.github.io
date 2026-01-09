@@ -36,14 +36,9 @@
 }
 
 html {
-	@apply motion-safe:scroll-smooth
-        antialiased
-        dark:antialiased;
+	@apply motion-safe:scroll-smooth antialiased dark:antialiased;
 }
 
 body {
-	@apply bg-white
-		dark:bg-gray-950
-		text-gray-900
-		dark:text-gray-100;
+	@apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
 }
