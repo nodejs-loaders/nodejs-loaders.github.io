@@ -22,7 +22,7 @@
     "geist": "~1.7.2",
     "postcss": "~8.5.13",
     "serve": "~14.2.6",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3"
   },
   "license": "MIT",
