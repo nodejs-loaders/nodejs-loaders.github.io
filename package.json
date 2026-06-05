@@ -19,7 +19,7 @@
     "@types/node": "~22.19.19",
     "@types/react": "~19.2.16",
     "@types/react-dom": "~19.2.3",
-    "geist": "~1.7.0",
+    "geist": "~1.7.2",
     "postcss": "~8.5.13",
     "serve": "~14.2.6",
     "tailwindcss": "^4.2.4",
