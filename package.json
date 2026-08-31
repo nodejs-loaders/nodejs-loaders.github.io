@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@radix-ui/react-avatar": "~1.1.11",
+    "@radix-ui/react-avatar": "~1.2.6",
     "classnames": "~2.5.1",
     "next": "16.2.7",
     "next-mdx-remote": "~6.0.0",
